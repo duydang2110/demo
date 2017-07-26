@@ -55,7 +55,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="partial_asset_list.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="partial_asset_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asset_tracking/templates/asset_tracking/partial_asset_list.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
@@ -109,11 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assettracking/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="304">
-              <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+              <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -128,7 +128,6 @@
         <option value="$PROJECT_DIR$/assettracking/urls.py" />
         <option value="$PROJECT_DIR$/asset_tracking/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/asset_tracking/templates/base_login.html" />
-        <option value="$PROJECT_DIR$/assettracking/settings.py" />
         <option value="$PROJECT_DIR$/asset_tracking/templates/base.html" />
         <option value="$PROJECT_DIR$/asset_tracking/urls.py" />
         <option value="$PROJECT_DIR$/asset_tracking/views.py" />
@@ -139,6 +138,7 @@
         <option value="$PROJECT_DIR$/asset_tracking/templates/asset_tracking/partial_asset_update.html" />
         <option value="$PROJECT_DIR$/asset_tracking/templates/asset_tracking/partial_asset_delete.html" />
         <option value="$PROJECT_DIR$/asset_tracking/templates/asset_tracking/partial_asset_list.html" />
+        <option value="$PROJECT_DIR$/assettracking/settings.py" />
       </list>
     </option>
   </component>
@@ -668,14 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assettracking/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/project/inventory/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-396">
@@ -740,6 +732,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assettracking/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
           <folding />
         </state>
       </provider>
