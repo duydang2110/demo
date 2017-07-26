@@ -1,0 +1,30 @@
+{% extends "login_base.html" %}
+{% block content %}
+
+{% if form.errors %}
+<center><p>Your username and password didn't match. Please try again.</p></center>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <center><p>Your account doesn't have access to this page. To proceed,
+        please login with an account that has access.</p></center>
+    {% else %}
+    <center><p>Please login to see this page.</p></center>
+    {% endif %}
+{% endif %}
+      <form class="form-signin"  method="post" >
+            {% csrf_token %}
+        <h2 class="form-signin-heading">Please sign in</h2>
+        {{ form.username }}
+        {{ form.password }}
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" >Sign in</button>
+        <input type="hidden" name="next" value="{{ next }}" />
+      </form>
+
+{% endblock %}

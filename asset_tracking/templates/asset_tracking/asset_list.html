@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <h1 class="page-header">Quản Lí Bảo Trì</h1>
+    <!-- BUTTON TO TRIGGER THE ACTION -->
+  <p>
+    <button type="button"
+            class="btn btn-primary js-create-asset"
+            data-url="{% url 'asset_create' %}">
+      <span class="glyphicon glyphicon-plus"></span>
+      Tạo Xe
+    </button>
+  </p>
+
+  <table class="table" id="asset-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Tên</th>
+        <th>Hãng SX</th>
+        <th>Nơi SX</th>
+        <th>Trạng Thái</th>
+        <th>Ngày Bảo Trì</th>
+        <th>Biển Số</th>
+        <th>Ghi Chú</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% include 'asset_tracking/partial_asset_list.html' %}
+
+    </tbody>
+  </table>
+
+   <!-- THE MODAL WE WILL BE USING -->
+  <div class="modal fade" id="modal-asset">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      </div>
+    </div>
+{% endblock %}
+{% block javascript %}
+    <script src="{% static 'js/assets.js' %}"></script>
+{% endblock %}
