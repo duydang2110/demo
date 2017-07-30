@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'widget_tweaks',
     'asset_tracking',
+    'crispy_forms',
+    'rest_framework',
+
 ]
 
 MIDDLEWARE = [
@@ -122,3 +125,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/home'
+
+CRISPY_TEMPLATE_PACK = "bootstrap3"
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'developer2110@gmail.com'
+EMAIL_HOST_PASSWORD = '@Pple2110'
+EMAIL_PORT = 587

@@ -1,12 +1,12 @@
 {% now "Y-m-d" as todays_date %}
 {% for asset in assets %}
         <tr>
-          <td>{{ asset.id }}</td>
-          <td>{{ asset.name }}</td>
-          <td>{{ asset.producer }}</td>
-          <td>{{ asset.made_in }}</td>
-          <td>{{ asset.status }}</td>
-          <td>{{ asset.warranty_date }}</td>
+          <td align="center">{{ asset.id }}</td>
+          <td align="center">{{ asset.name }}</td>
+          <td align="center">{{ asset.producer }}</td>
+          <td align="center">{{ asset.total }}</td>
+          <td align="center">{{ asset.status }}</td>
+          <td align="center">{{ asset.warranty_date }}</td>
           {% if asset.warranty_date|date:"Y-m-d" <= todays_date %}
             <td>
                 <div class="alert-danger" role="alert">
@@ -18,18 +18,27 @@
           {% else %}
             <td >{{ asset.bienso }}</td>
           {% endif %}
-          <td>{{ asset.note }}</td>
+          <td>{{ asset.Madriver }}</td>
             <td>
       <button type="button"
               class="btn btn-warning btn-sm js-update-asset"
               data-url="{% url 'asset_update' asset.id %}">
         <span class="glyphicon glyphicon-pencil"></span> Edit
       </button>
+
+        <button type="button"
+            class="btn btn-warning btn-sm js-create-history"
+            data-url="{% url 'history_create' asset.id %}">
+      <span class="glyphicon glyphicon-pencil"></span>
+      Chi Phí
+    </button>
+
       <button type="button"
               class="btn btn-danger btn-sm js-delete-asset"
               data-url="{% url 'asset_delete' asset.id %}">
         <span class="glyphicon glyphicon-trash"></span> Delete
       </button>
+
     </td>
         </tr>
 {% empty %}
@@ -37,3 +46,5 @@
           <td colspan="8" class="text-center bg-warning">Không có xe nào </td>
         </tr>
 {% endfor %}
+
+

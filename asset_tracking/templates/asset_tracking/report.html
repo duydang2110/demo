@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Chi Phí</h4>
+                                <p class="category">
+
+                                </p>
+                            </div>
+                            <div class="content">
+                                <canvas id="myChart3"></canvas>
+                                <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
+
+                                <div class="footer">
+                                    <div class="legend">
+                                        <i class="fa fa-circle text-info"></i> Open
+                                        <i class="fa fa-circle text-danger"></i> Bounce
+                                        <i class="fa fa-circle text-warning"></i> Unsubscribe
+                                    </div>
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="fa fa-clock-o"></i> Campaign sent 2 days ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Chi Phí</h4>
+                                <p class="category"><a href="{% url 'pdf' %}"><img src="{% static 'img/pdf-icon.png' %}"/></a></p>
+                            </div>
+                            <div class="content">
+                                <canvas id="myChart"></canvas>
+                                <canvas id="myChart2"></canvas>
+                                <div id="chartHours" class="ct-chart"></div>
+                                <div class="footer">
+                                    <div class="legend">
+                                        <i class="fa fa-circle text-info"></i> Open
+                                        <i class="fa fa-circle text-danger"></i> Click
+                                        <i class="fa fa-circle text-warning"></i> Click Second Time
+                                    </div>
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="fa fa-history"></i> Updated 3 minutes ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+
+{% endblock %}
+
+
+{% block javascript %}
+<script>
+    var endpoint = '/api/data/'
+    var defaultData = []
+    var labels = [];
+    $.ajax({
+        method:"GET",
+        url: endpoint,
+        success: function(data){
+            labels = data.labels
+            console.log(labels)
+            defaultData = data.default
+            console.log(defaultData)
+            setChart()
+        },
+        error: function(error_data){
+            console.log("error")
+            console.log(error_data)
+        }
+    })
+function setChart(){
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var ctx2 = document.getElementById('myChart2').getContext('2d');
+    var ctx3 = document.getElementById('myChart3').getContext('2d');
+    var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+        labels:labels,
+        datasets: [{
+            label: "Chi Phí Sửa Chữa Xe",
+            backgroundColor: 'rgb(102, 149, 226)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: defaultData,
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+     var chart = new Chart(ctx2, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels:labels,
+        datasets: [{
+            label: "Chi Phí Sửa Chữa Xe",
+            backgroundColor: 'rgb(102, 149, 226)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: defaultData,
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+}
+
+</script>
+{% endblock %}

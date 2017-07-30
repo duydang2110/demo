@@ -40,16 +40,22 @@ $(function () {
 
   /* Binding */
 
-  // Create book
+  // Create asset
   $(".js-create-asset").click(loadForm);
   $("#modal-asset").on("submit", ".js-asset-create-form", saveForm);
 
-  // Update book
-  $("#asset-table").on("click", ".js-update-asset", loadForm);
-  $("#modal-asset").on("submit", ".js-asset-update-form", saveForm);
+  // Update asset
+   $("#asset-table").on("click", ".js-update-asset", loadForm);
+   $("#modal-asset").on("submit", ".js-asset-update-form", saveForm);
 
-  // Delete book
+  // Delete asset
 $("#asset-table").on("click", ".js-delete-asset", loadForm);
 $("#modal-asset").on("submit", ".js-asset-delete-form", saveForm);
+
+
+// Create history
+   $("#asset-table").on("click", ".js-create-history", loadForm);
+ // $(".js-create-history").click(loadForm);
+  $("#modal-asset").on("submit", ".js-history-create-form", saveForm);
 
 });
